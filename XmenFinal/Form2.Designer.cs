@@ -184,7 +184,7 @@
             // 
             // buttonCrear
             // 
-            this.buttonCrear.Location = new System.Drawing.Point(854, 30);
+            this.buttonCrear.Location = new System.Drawing.Point(877, 32);
             this.buttonCrear.Name = "buttonCrear";
             this.buttonCrear.Size = new System.Drawing.Size(75, 23);
             this.buttonCrear.TabIndex = 15;
@@ -193,7 +193,7 @@
             // 
             // buttonActualizar
             // 
-            this.buttonActualizar.Location = new System.Drawing.Point(854, 83);
+            this.buttonActualizar.Location = new System.Drawing.Point(854, 75);
             this.buttonActualizar.Name = "buttonActualizar";
             this.buttonActualizar.Size = new System.Drawing.Size(120, 39);
             this.buttonActualizar.TabIndex = 16;
@@ -217,6 +217,7 @@
             this.buttonLeer.TabIndex = 18;
             this.buttonLeer.Text = "LEER";
             this.buttonLeer.UseVisualStyleBackColor = true;
+            this.buttonLeer.Click += new System.EventHandler(this.buttonLeer_Click);
             // 
             // Forminterfaz
             // 

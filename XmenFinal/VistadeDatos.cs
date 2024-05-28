@@ -10,22 +10,16 @@ using System.Windows.Forms;
 
 namespace XmenFinal
 {
-    public partial class Forminterfaz : Form
+    public partial class VistadeDatos : Form
     {
-        public Forminterfaz()
+        public VistadeDatos()
         {
             InitializeComponent();
         }
 
-        private void Forminterfaz_Load(object sender, EventArgs e)
+        private void buttonRegresarInterfaz_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void buttonLeer_Click(object sender, EventArgs e)
-        {
-            VistadeDatos vistadeDatos = new VistadeDatos();
-            vistadeDatos.Show();
+            this.Close();
         }
     }
 }
