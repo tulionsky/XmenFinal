@@ -28,25 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formprincipal));
             this.buttonEmpezar = new System.Windows.Forms.Button();
+            this.buttonConexion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonEmpezar
             // 
-            this.buttonEmpezar.Location = new System.Drawing.Point(247, 274);
+            this.buttonEmpezar.BackColor = System.Drawing.Color.IndianRed;
+            this.buttonEmpezar.Font = new System.Drawing.Font("Rockwell Extra Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEmpezar.Location = new System.Drawing.Point(214, 238);
             this.buttonEmpezar.Name = "buttonEmpezar";
             this.buttonEmpezar.Size = new System.Drawing.Size(241, 92);
             this.buttonEmpezar.TabIndex = 0;
             this.buttonEmpezar.Text = "¿Empezamos?";
-            this.buttonEmpezar.UseVisualStyleBackColor = true;
+            this.buttonEmpezar.UseVisualStyleBackColor = false;
             this.buttonEmpezar.Click += new System.EventHandler(this.buttonEmpezar_Click);
+            // 
+            // buttonConexion
+            // 
+            this.buttonConexion.Location = new System.Drawing.Point(55, 47);
+            this.buttonConexion.Name = "buttonConexion";
+            this.buttonConexion.Size = new System.Drawing.Size(144, 78);
+            this.buttonConexion.TabIndex = 1;
+            this.buttonConexion.Text = "REALIZAR CONEXION CON BD";
+            this.buttonConexion.UseVisualStyleBackColor = true;
+            this.buttonConexion.Click += new System.EventHandler(this.buttonConexion_Click);
             // 
             // Formprincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(837, 480);
+            this.Controls.Add(this.buttonConexion);
             this.Controls.Add(this.buttonEmpezar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Formprincipal";
             this.Text = "PAGINA PRINCIPAL";
             this.ResumeLayout(false);
@@ -56,6 +73,7 @@
         #endregion
 
         private System.Windows.Forms.Button buttonEmpezar;
+        private System.Windows.Forms.Button buttonConexion;
     }
 }
 

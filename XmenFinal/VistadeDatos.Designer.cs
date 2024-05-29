@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VistadeDatos));
+            this.dataGridViewXmen = new System.Windows.Forms.DataGridView();
             this.buttonRegresarInterfaz = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewXmen)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewXmen
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 47);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(911, 418);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewXmen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewXmen.Location = new System.Drawing.Point(12, 47);
+            this.dataGridViewXmen.Name = "dataGridViewXmen";
+            this.dataGridViewXmen.RowHeadersWidth = 51;
+            this.dataGridViewXmen.RowTemplate.Height = 24;
+            this.dataGridViewXmen.Size = new System.Drawing.Size(911, 418);
+            this.dataGridViewXmen.TabIndex = 0;
             // 
             // buttonRegresarInterfaz
             // 
@@ -59,17 +60,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(935, 559);
             this.Controls.Add(this.buttonRegresarInterfaz);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewXmen);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VistadeDatos";
             this.Text = "VistadeDatos";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewXmen)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewXmen;
         private System.Windows.Forms.Button buttonRegresarInterfaz;
     }
 }

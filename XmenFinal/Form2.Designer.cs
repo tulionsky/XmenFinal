@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Forminterfaz));
             this.labelID = new System.Windows.Forms.Label();
             this.labelNOMBRE = new System.Windows.Forms.Label();
             this.labelEDAD = new System.Windows.Forms.Label();
@@ -176,7 +177,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(265, 539);
             this.pictureBox1.TabIndex = 14;
@@ -243,6 +244,7 @@
             this.Controls.Add(this.labelEDAD);
             this.Controls.Add(this.labelNOMBRE);
             this.Controls.Add(this.labelID);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Forminterfaz";
             this.Text = "INTERFAZ";
             this.Load += new System.EventHandler(this.Forminterfaz_Load);
