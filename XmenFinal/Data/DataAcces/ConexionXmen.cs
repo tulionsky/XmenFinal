@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Tls;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -78,6 +79,112 @@ namespace XmenFinal.Data.DataAcces
             }
         }
 
+        public void Actualizar(usuario usr)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+
+                try
+                {
+                    string query = "UPDATE xmen_lista set nombre=@nombre, edad=@edad, mutante=@mutante, poder=@poder, nivel_mutacion=@nivel_mutacion, grupo=@grupo where id=@id";
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    cmd.Parameters.AddWithValue("@id", usr.ID);
+                    cmd.Parameters.AddWithValue("@nombre", usr.Nombre);
+                    cmd.Parameters.AddWithValue("@edad", usr.Edad);
+                    cmd.Parameters.AddWithValue("@mutante", usr.Mutante);
+                    cmd.Parameters.AddWithValue("@poder", usr.Poder);
+                    cmd.Parameters.AddWithValue("@nivel_mutacion", usr.Nivel_Mutacion);
+                    cmd.Parameters.AddWithValue("@grupo", usr.Grupo);
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al Actualizar el registro: " + ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+        }
+
+        public int Borrar(usuario usr)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "delete xmen_lista where id =@id";
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@id",usr.ID);
+                    return cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public DataTable BuscarMutante(usuario usr)
+        {
+            DataTable mutante = new DataTable();
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT * FROM xmen_lista WHERE id = @id";
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@id",usr.ID);
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(mutante);
+                    }
+                }
+            }
+
+            return mutante;
+        }
+
+        public usuario BuscarPorId(int id)
+        {
+            usuario Buscarmutante = null;
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+
+                try
+                {
+                string query = "SELECT * FROM xmen_lista WHERE id = @id";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@id", id);
+                connection.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    Buscarmutante = new usuario
+                    {
+                        ID = reader.GetInt32("ID"),
+                        Nombre = reader.GetString("nombre"),
+                        Edad = reader.GetInt32("edad"),
+                        Mutante = reader.GetBoolean("mutante"),
+                        Poder = reader.GetString("poder"),
+                        Nivel_Mutacion = reader.GetString("nivel_mutacion"),
+                        Grupo = reader.GetString("grupo")
+                    };
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar el libro por ID: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return Buscarmutante;
+        }
+
+
+
         public List<usuario> ObtenerTodosLosUsuarios()
         {
             List<usuario> usuarios = new List<usuario>();
@@ -116,5 +223,26 @@ namespace XmenFinal.Data.DataAcces
             return usuarios;
         }
 
+        public void Eliminar(int id)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+
+                try
+                {
+                string query = "DELETE FROM xmen_lista WHERE id = @id";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@id", id);
+                connection.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar el registro: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
     }
 }

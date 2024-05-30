@@ -52,14 +52,26 @@ namespace XmenFinal
 
         private void buttonCrear_Click(object sender, EventArgs e)
         {
-            usr.Nombre = textBoxnombre.Text;
-            usr.Edad = Convert.ToInt32(textBoxedad.Text);
-            usr.Mutante= checkBoxmutante.Checked;
-            usr.Poder = textBoxpoder.Text;
-            usr.Nivel_Mutacion = comboBoxmutacion.Text;
-            usr.Grupo = comboBoxequipo.Text;
-            conect.Insertar(usr);
-            MessageBox.Show("Personaje agregado sin clavos");
+            DialogResult confirmacion = MessageBox.Show("¿Deseas continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // Verificar la respuesta del usuario
+            if (confirmacion == DialogResult.Yes)
+            {
+                // Acción para "Sí"
+                usr.Nombre = textBoxnombre.Text;
+                usr.Edad = Convert.ToInt32(textBoxedad.Text);
+                usr.Mutante = checkBoxmutante.Checked;
+                usr.Poder = textBoxpoder.Text;
+                usr.Nivel_Mutacion = comboBoxmutacion.Text;
+                usr.Grupo = comboBoxequipo.Text;
+                conect.Insertar(usr);
+                MessageBox.Show("Personaje agregado sin clavos");
+            }
+            else if (confirmacion == DialogResult.No)
+            {
+                // Acción para "No"
+                MessageBox.Show("Has seleccionado 'No'");
+            }
         }
 
         private void buttonObtenerTodos_Click(object sender, EventArgs e)
@@ -69,6 +81,7 @@ namespace XmenFinal
             {
                 cursor1.Total = todos.Count;
                 MessageBox.Show("Total de registros: " + cursor1.Total);
+                MostrarEncontrado(todos[cursor1.current]);
             }
             else
             {
@@ -76,61 +89,114 @@ namespace XmenFinal
             }
         }
 
-        private void MostrarMasRegistros()
-        {
-            if (cursor1.current >= 0 && cursor1.current < cursor1.Total)
-            {
-                usuario u = todos[cursor1.current];
-                textBoxid.Text = u.ID.ToString();
-                textBoxnombre.Text = u.Nombre;
-                textBoxedad.Text = u.Edad.ToString();
-                checkBoxmutante.Checked = u.Mutante;
-                textBoxpoder.Text = u.Poder;
-                comboBoxmutacion.Text = u.Nivel_Mutacion;
-                comboBoxequipo.Text = u.Grupo;
 
-                // incrementar el cursor y validar que no se pase del total de registros
-                cursor1.current++;
-                if (cursor1.current >= cursor1.Total)
-                {
-                    cursor1.current = 0;
-                    MessageBox.Show("Fin de los registros");
-                }
-            }
-        }
-
-
-        private void MostrarMenosRegistros()
-        {
-            if (cursor1.current >= 0 && cursor1.current < cursor1.Total)
-            {
-                usuario u = todos[cursor1.current];
-                textBoxid.Text = u.ID.ToString();
-                textBoxnombre.Text = u.Nombre;
-                textBoxedad.Text = u.Edad.ToString();
-                checkBoxmutante.Checked = u.Mutante;
-                textBoxpoder.Text = u.Poder;
-                comboBoxmutacion.Text = u.Nivel_Mutacion;
-                comboBoxequipo.Text = u.Grupo;
-
-                // decrementar el cursor y validar que no se pase del inicio de los registros
-                cursor1.current--;
-                if (cursor1.current <= 0)
-                {
-                    cursor1.current = cursor1.Total - 1;
-                    MessageBox.Show("Inicio de los registros");
-                }
-            }
-        }
 
         private void buttonsiguiente_Click(object sender, EventArgs e)
         {
-            MostrarMasRegistros();
+            if (cursor1.current < cursor1.Total - 1)
+            {
+                cursor1.current++;
+            }
+            else
+            {
+                cursor1.current = 0;
+                MessageBox.Show("Fin de los registros, volviendo al inicio.");
+            }
+
+            MostrarEncontrado(todos[cursor1.current]);
         }
 
         private void buttonanterior_Click(object sender, EventArgs e)
         {
-            MostrarMenosRegistros();
+            if (cursor1.current > 0)
+            {
+                cursor1.current--;
+            }
+            else
+            {
+                cursor1.current = cursor1.Total - 1;
+                MessageBox.Show("Inicio de los registros, volviendo al final.");
+            }
+
+            MostrarEncontrado(todos[cursor1.current]);
+        }
+
+        private void buttonActualizar_Click(object sender, EventArgs e)
+        {
+            usr.ID = Convert.ToInt32(textBoxid.Text);
+            usr.Nombre = textBoxnombre.Text;
+            usr.Edad = Convert.ToInt32(textBoxedad.Text);
+            usr.Mutante = checkBoxmutante.Checked;
+            usr.Poder = textBoxpoder.Text;
+            usr.Nivel_Mutacion = comboBoxmutacion.Text;
+            usr.Grupo = comboBoxequipo.Text;
+            conect.Actualizar(usr);
+            MessageBox.Show("Todo bien al actualizar👍");
+        }
+
+        private void buttonbuscar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBoxid.Text))
+            {
+                MessageBox.Show("Por favor, ingrese un ID para buscar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            int idABuscar;
+            if (!int.TryParse(textBoxid.Text, out idABuscar))
+            {
+                MessageBox.Show("El ID ingresado no es válido. Por favor, ingrese un número entero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            usuario Buscarmutante = conect.BuscarPorId(idABuscar);
+
+            if (Buscarmutante != null)
+            {
+                MostrarEncontrado(Buscarmutante);
+            }
+            else
+            {
+                MessageBox.Show("No se encontró ningún libro con el ID especificado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+        }
+
+        private void MostrarEncontrado(usuario usr)
+        {
+            textBoxid.Text = usr.ID.ToString();
+            textBoxnombre.Text = usr.Nombre;
+            textBoxedad.Text = usr.Edad.ToString();
+            checkBoxmutante.Checked = usr.Mutante;
+            textBoxpoder.Text = usr.Poder;
+            comboBoxmutacion.SelectedItem = usr.Nivel_Mutacion;
+            comboBoxequipo.SelectedItem = usr.Grupo;
+
+        }
+
+        private void buttonEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult confirmacion = MessageBox.Show("¿Deseas continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // Verificar la respuesta del usuario
+            if (confirmacion == DialogResult.Yes)
+            {
+                int id = int.Parse(textBoxid.Text);
+                try
+                {
+                    conect.Eliminar(id);
+                    MessageBox.Show("Acabas de eliminar a un personaje.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al eliminar el libro: " + ex.Message);
+                }
+            }
+            else if (confirmacion == DialogResult.No)
+            {
+                // Acción para "No"
+                MessageBox.Show("Has seleccionado 'No'");
+            }
         }
     }
 }

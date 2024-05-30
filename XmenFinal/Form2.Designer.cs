@@ -51,6 +51,7 @@
             this.buttonObtenerTodos = new System.Windows.Forms.Button();
             this.buttonsiguiente = new System.Windows.Forms.Button();
             this.buttonanterior = new System.Windows.Forms.Button();
+            this.buttonbuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -204,6 +205,7 @@
             this.buttonActualizar.TabIndex = 16;
             this.buttonActualizar.Text = "ACTUALIZAR";
             this.buttonActualizar.UseVisualStyleBackColor = true;
+            this.buttonActualizar.Click += new System.EventHandler(this.buttonActualizar_Click);
             // 
             // buttonEliminar
             // 
@@ -213,6 +215,7 @@
             this.buttonEliminar.TabIndex = 17;
             this.buttonEliminar.Text = "ELIMINAR";
             this.buttonEliminar.UseVisualStyleBackColor = true;
+            this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
             // 
             // buttonLeer
             // 
@@ -254,12 +257,23 @@
             this.buttonanterior.UseVisualStyleBackColor = true;
             this.buttonanterior.Click += new System.EventHandler(this.buttonanterior_Click);
             // 
+            // buttonbuscar
+            // 
+            this.buttonbuscar.Location = new System.Drawing.Point(877, 171);
+            this.buttonbuscar.Name = "buttonbuscar";
+            this.buttonbuscar.Size = new System.Drawing.Size(128, 50);
+            this.buttonbuscar.TabIndex = 22;
+            this.buttonbuscar.Text = "BUSCAR POR ID";
+            this.buttonbuscar.UseVisualStyleBackColor = true;
+            this.buttonbuscar.Click += new System.EventHandler(this.buttonbuscar_Click);
+            // 
             // Forminterfaz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(1090, 609);
+            this.Controls.Add(this.buttonbuscar);
             this.Controls.Add(this.buttonanterior);
             this.Controls.Add(this.buttonsiguiente);
             this.Controls.Add(this.buttonObtenerTodos);
@@ -317,5 +331,6 @@
         private System.Windows.Forms.Button buttonObtenerTodos;
         private System.Windows.Forms.Button buttonsiguiente;
         private System.Windows.Forms.Button buttonanterior;
+        private System.Windows.Forms.Button buttonbuscar;
     }
 }

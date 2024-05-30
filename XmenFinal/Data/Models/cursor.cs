@@ -8,7 +8,7 @@ namespace XmenFinal.Data.Models
 {
     internal class cursor
     {
-        public int current = 1;
+        public int current = 0;
         public int Total = 0;
     }
 }
