@@ -60,7 +60,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(837, 480);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(829, 464);
             this.Controls.Add(this.buttonConexion);
             this.Controls.Add(this.buttonEmpezar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

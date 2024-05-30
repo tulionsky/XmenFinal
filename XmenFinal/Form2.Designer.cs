@@ -191,6 +191,7 @@
             this.buttonCrear.TabIndex = 15;
             this.buttonCrear.Text = "CREAR";
             this.buttonCrear.UseVisualStyleBackColor = true;
+            this.buttonCrear.Click += new System.EventHandler(this.buttonCrear_Click);
             // 
             // buttonActualizar
             // 
@@ -224,6 +225,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(1090, 609);
             this.Controls.Add(this.buttonLeer);
             this.Controls.Add(this.buttonEliminar);
@@ -244,6 +246,7 @@
             this.Controls.Add(this.labelEDAD);
             this.Controls.Add(this.labelNOMBRE);
             this.Controls.Add(this.labelID);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Forminterfaz";
             this.Text = "INTERFAZ";

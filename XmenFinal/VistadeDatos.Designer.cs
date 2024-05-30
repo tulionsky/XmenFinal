@@ -37,16 +37,16 @@
             // dataGridViewXmen
             // 
             this.dataGridViewXmen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewXmen.Location = new System.Drawing.Point(12, 47);
+            this.dataGridViewXmen.Location = new System.Drawing.Point(12, 12);
             this.dataGridViewXmen.Name = "dataGridViewXmen";
             this.dataGridViewXmen.RowHeadersWidth = 51;
             this.dataGridViewXmen.RowTemplate.Height = 24;
-            this.dataGridViewXmen.Size = new System.Drawing.Size(911, 418);
+            this.dataGridViewXmen.Size = new System.Drawing.Size(1018, 418);
             this.dataGridViewXmen.TabIndex = 0;
             // 
             // buttonRegresarInterfaz
             // 
-            this.buttonRegresarInterfaz.Location = new System.Drawing.Point(34, 484);
+            this.buttonRegresarInterfaz.Location = new System.Drawing.Point(31, 436);
             this.buttonRegresarInterfaz.Name = "buttonRegresarInterfaz";
             this.buttonRegresarInterfaz.Size = new System.Drawing.Size(211, 63);
             this.buttonRegresarInterfaz.TabIndex = 1;
@@ -58,7 +58,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(935, 559);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1042, 507);
             this.Controls.Add(this.buttonRegresarInterfaz);
             this.Controls.Add(this.dataGridViewXmen);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

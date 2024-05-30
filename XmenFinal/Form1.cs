@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using XmenFinal.Data.DataAcces;
+using XmenFinal.Data.Models;
 
 namespace XmenFinal
 {
     public partial class Formprincipal : Form
     {
         private ConexionXmen Conexion;
+
         public Formprincipal()
         {
             InitializeComponent();
