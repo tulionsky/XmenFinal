@@ -48,6 +48,9 @@
             this.buttonActualizar = new System.Windows.Forms.Button();
             this.buttonEliminar = new System.Windows.Forms.Button();
             this.buttonLeer = new System.Windows.Forms.Button();
+            this.buttonObtenerTodos = new System.Windows.Forms.Button();
+            this.buttonsiguiente = new System.Windows.Forms.Button();
+            this.buttonanterior = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -221,12 +224,45 @@
             this.buttonLeer.UseVisualStyleBackColor = true;
             this.buttonLeer.Click += new System.EventHandler(this.buttonLeer_Click);
             // 
+            // buttonObtenerTodos
+            // 
+            this.buttonObtenerTodos.Location = new System.Drawing.Point(806, 345);
+            this.buttonObtenerTodos.Name = "buttonObtenerTodos";
+            this.buttonObtenerTodos.Size = new System.Drawing.Size(168, 64);
+            this.buttonObtenerTodos.TabIndex = 19;
+            this.buttonObtenerTodos.Text = "obtener todos";
+            this.buttonObtenerTodos.UseVisualStyleBackColor = true;
+            this.buttonObtenerTodos.Click += new System.EventHandler(this.buttonObtenerTodos_Click);
+            // 
+            // buttonsiguiente
+            // 
+            this.buttonsiguiente.Location = new System.Drawing.Point(806, 456);
+            this.buttonsiguiente.Name = "buttonsiguiente";
+            this.buttonsiguiente.Size = new System.Drawing.Size(152, 66);
+            this.buttonsiguiente.TabIndex = 20;
+            this.buttonsiguiente.Text = "siguiente";
+            this.buttonsiguiente.UseVisualStyleBackColor = true;
+            this.buttonsiguiente.Click += new System.EventHandler(this.buttonsiguiente_Click);
+            // 
+            // buttonanterior
+            // 
+            this.buttonanterior.Location = new System.Drawing.Point(620, 439);
+            this.buttonanterior.Name = "buttonanterior";
+            this.buttonanterior.Size = new System.Drawing.Size(136, 68);
+            this.buttonanterior.TabIndex = 21;
+            this.buttonanterior.Text = "Anterior";
+            this.buttonanterior.UseVisualStyleBackColor = true;
+            this.buttonanterior.Click += new System.EventHandler(this.buttonanterior_Click);
+            // 
             // Forminterfaz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(1090, 609);
+            this.Controls.Add(this.buttonanterior);
+            this.Controls.Add(this.buttonsiguiente);
+            this.Controls.Add(this.buttonObtenerTodos);
             this.Controls.Add(this.buttonLeer);
             this.Controls.Add(this.buttonEliminar);
             this.Controls.Add(this.buttonActualizar);
@@ -278,5 +314,8 @@
         private System.Windows.Forms.Button buttonActualizar;
         private System.Windows.Forms.Button buttonEliminar;
         private System.Windows.Forms.Button buttonLeer;
+        private System.Windows.Forms.Button buttonObtenerTodos;
+        private System.Windows.Forms.Button buttonsiguiente;
+        private System.Windows.Forms.Button buttonanterior;
     }
 }

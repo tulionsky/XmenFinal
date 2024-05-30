@@ -16,7 +16,18 @@ namespace XmenFinal.Data.Models
         public string Nivel_Mutacion { get; set; }
         public string Grupo { get; set; }
 
+        public usuario(int id, string nombre, int edad, bool mutante, string poder, string nivelMutacion, string grupo)
+        {
+            ID = id;
+            Nombre = nombre;
+            Edad = edad;
+            Mutante = mutante;
+            Poder = poder;
+            Nivel_Mutacion = nivelMutacion;
+            Grupo = grupo;
+        }
 
+        public usuario() { }
 
     }
 }

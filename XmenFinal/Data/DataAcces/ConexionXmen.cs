@@ -57,7 +57,7 @@ namespace XmenFinal.Data.DataAcces
 
                 try
                 {
-                string query = "INSERT INTO Usuarios nombre, edad, mutante, poder, nivel_mutacion, grupo, ) VALUES (@nombre, @edad, @mutante, @poder, @nivel_mutacion, @grupo)";
+                string query = "INSERT INTO xmen_lista (nombre, edad, mutante, poder, nivel_mutacion, grupo) VALUES (@nombre, @edad, @mutante, @poder, @nivel_mutacion, @grupo)";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@nombre", usr.Nombre);
                 cmd.Parameters.AddWithValue("@edad", usr.Edad);
@@ -76,6 +76,44 @@ namespace XmenFinal.Data.DataAcces
             {
                 connection.Close();
             }
+        }
+
+        public List<usuario> ObtenerTodosLosUsuarios()
+        {
+            List<usuario> usuarios = new List<usuario>();
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                string query = "SELECT * FROM xmen_lista";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                try
+                {
+                    connection.Open();
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        usuario nuevoUsuario = new usuario(
+                            reader.GetInt32(reader.GetOrdinal("id")),
+                            reader.GetString(reader.GetOrdinal("nombre")),
+                            reader.GetInt32(reader.GetOrdinal("edad")),
+                            reader.GetBoolean(reader.GetOrdinal("mutante")),
+                            reader.GetString(reader.GetOrdinal("poder")),
+                            reader.GetString(reader.GetOrdinal("nivel_mutacion")),
+                            reader.GetString(reader.GetOrdinal("grupo"))
+                            );
+
+                        usuarios.Add(nuevoUsuario);
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+            }
+
+            return usuarios;
         }
 
     }
