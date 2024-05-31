@@ -216,5 +216,10 @@ namespace XmenFinal
                 MessageBox.Show("Has seleccionado 'No'");
             }
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            pictureBoxKirby.Visible = true;
+        }
     }
 }

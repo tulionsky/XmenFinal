@@ -31,7 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VistadeDatos));
             this.dataGridViewXmen = new System.Windows.Forms.DataGridView();
             this.buttonRegresarInterfaz = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewXmen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewXmen
@@ -54,19 +56,31 @@
             this.buttonRegresarInterfaz.UseVisualStyleBackColor = true;
             this.buttonRegresarInterfaz.Click += new System.EventHandler(this.buttonRegresarInterfaz_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(932, 427);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(98, 83);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // VistadeDatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1042, 507);
+            this.ClientSize = new System.Drawing.Size(1042, 508);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonRegresarInterfaz);
             this.Controls.Add(this.dataGridViewXmen);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VistadeDatos";
             this.Text = "VistadeDatos";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewXmen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -75,5 +89,6 @@
 
         private System.Windows.Forms.DataGridView dataGridViewXmen;
         private System.Windows.Forms.Button buttonRegresarInterfaz;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

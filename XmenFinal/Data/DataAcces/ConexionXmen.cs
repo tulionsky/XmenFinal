@@ -53,6 +53,13 @@ namespace XmenFinal.Data.DataAcces
             return personajes;
         }
 
+        public void InsertarImagen(PictureBox foto)
+        {
+            string query = "INSERT INTO xmen_lista set (imagen) VALUES (@imagen)";
+            byte[] mifoto = imagen.ImageToByte(foto.Image);
+
+        }
+
         public void Insertar(usuario usr)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))

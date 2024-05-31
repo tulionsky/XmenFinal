@@ -47,7 +47,7 @@
             // 
             // buttonConexion
             // 
-            this.buttonConexion.Location = new System.Drawing.Point(55, 47);
+            this.buttonConexion.Location = new System.Drawing.Point(50, 70);
             this.buttonConexion.Name = "buttonConexion";
             this.buttonConexion.Size = new System.Drawing.Size(144, 78);
             this.buttonConexion.TabIndex = 1;
