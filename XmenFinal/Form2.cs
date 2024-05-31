@@ -42,6 +42,7 @@ namespace XmenFinal
         {
             comboBoxmutacion.Items.AddRange(nivelesMutacion);
             comboBoxequipo.Items.AddRange(grupos);
+            iniciar();
         }
 
         private void buttonLeer_Click(object sender, EventArgs e)
@@ -52,7 +53,7 @@ namespace XmenFinal
 
         private void buttonCrear_Click(object sender, EventArgs e)
         {
-            DialogResult confirmacion = MessageBox.Show("¿Deseas continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult confirmacion = MessageBox.Show("¿Estas seguro de crear uno nuevo?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             // Verificar la respuesta del usuario
             if (confirmacion == DialogResult.Yes)
@@ -66,6 +67,7 @@ namespace XmenFinal
                 usr.Grupo = comboBoxequipo.Text;
                 conect.Insertar(usr);
                 MessageBox.Show("Personaje agregado sin clavos");
+                iniciar();
             }
             else if (confirmacion == DialogResult.No)
             {
@@ -74,19 +76,34 @@ namespace XmenFinal
             }
         }
 
-        private void buttonObtenerTodos_Click(object sender, EventArgs e)
+
+        private void blanquear()
         {
-           todos = conect.ObtenerTodosLosUsuarios();
+            textBoxid.Clear();
+            textBoxnombre.Clear();
+            textBoxedad.Clear();
+            textBoxpoder.Clear();
+            comboBoxmutacion.Text="";
+            comboBoxequipo.Text = "";
+            checkBoxmutante.Checked = false;
+        }
+        private void iniciar()
+        {
+            blanquear();
+            todos = conect.ObtenerTodosLosUsuarios();
             if (todos.Count > 0)
             {
                 cursor1.Total = todos.Count;
-                MessageBox.Show("Total de registros: " + cursor1.Total);
                 MostrarEncontrado(todos[cursor1.current]);
             }
             else
             {
                 MessageBox.Show("No hay registros");
             }
+        }
+        private void buttonObtenerTodos_Click(object sender, EventArgs e)
+        {
+            blanquear();
         }
 
 
@@ -176,7 +193,7 @@ namespace XmenFinal
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
-            DialogResult confirmacion = MessageBox.Show("¿Deseas continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult confirmacion = MessageBox.Show("¿Estas seguro de Eliminarlo?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             // Verificar la respuesta del usuario
             if (confirmacion == DialogResult.Yes)
@@ -186,10 +203,11 @@ namespace XmenFinal
                 {
                     conect.Eliminar(id);
                     MessageBox.Show("Acabas de eliminar a un personaje.");
+                    iniciar();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al eliminar el libro: " + ex.Message);
+                    MessageBox.Show("Error al eliminar el personaje: " + ex.Message);
                 }
             }
             else if (confirmacion == DialogResult.No)

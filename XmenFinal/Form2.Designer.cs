@@ -136,7 +136,7 @@
             // 
             this.textBoxnombre.Location = new System.Drawing.Point(287, 105);
             this.textBoxnombre.Name = "textBoxnombre";
-            this.textBoxnombre.Size = new System.Drawing.Size(100, 22);
+            this.textBoxnombre.Size = new System.Drawing.Size(230, 22);
             this.textBoxnombre.TabIndex = 8;
             // 
             // textBoxedad
@@ -160,7 +160,7 @@
             // 
             this.textBoxpoder.Location = new System.Drawing.Point(287, 306);
             this.textBoxpoder.Name = "textBoxpoder";
-            this.textBoxpoder.Size = new System.Drawing.Size(100, 22);
+            this.textBoxpoder.Size = new System.Drawing.Size(410, 22);
             this.textBoxpoder.TabIndex = 11;
             // 
             // comboBoxmutacion
@@ -189,9 +189,10 @@
             // 
             // buttonCrear
             // 
-            this.buttonCrear.Location = new System.Drawing.Point(877, 32);
+            this.buttonCrear.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCrear.Location = new System.Drawing.Point(937, 12);
             this.buttonCrear.Name = "buttonCrear";
-            this.buttonCrear.Size = new System.Drawing.Size(75, 23);
+            this.buttonCrear.Size = new System.Drawing.Size(97, 37);
             this.buttonCrear.TabIndex = 15;
             this.buttonCrear.Text = "CREAR";
             this.buttonCrear.UseVisualStyleBackColor = true;
@@ -199,9 +200,10 @@
             // 
             // buttonActualizar
             // 
+            this.buttonActualizar.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonActualizar.Location = new System.Drawing.Point(854, 75);
             this.buttonActualizar.Name = "buttonActualizar";
-            this.buttonActualizar.Size = new System.Drawing.Size(120, 39);
+            this.buttonActualizar.Size = new System.Drawing.Size(151, 47);
             this.buttonActualizar.TabIndex = 16;
             this.buttonActualizar.Text = "ACTUALIZAR";
             this.buttonActualizar.UseVisualStyleBackColor = true;
@@ -209,6 +211,7 @@
             // 
             // buttonEliminar
             // 
+            this.buttonEliminar.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEliminar.Location = new System.Drawing.Point(854, 128);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(120, 36);
@@ -219,9 +222,10 @@
             // 
             // buttonLeer
             // 
+            this.buttonLeer.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLeer.Location = new System.Drawing.Point(899, 227);
             this.buttonLeer.Name = "buttonLeer";
-            this.buttonLeer.Size = new System.Drawing.Size(75, 23);
+            this.buttonLeer.Size = new System.Drawing.Size(88, 34);
             this.buttonLeer.TabIndex = 18;
             this.buttonLeer.Text = "LEER";
             this.buttonLeer.UseVisualStyleBackColor = true;
@@ -229,17 +233,19 @@
             // 
             // buttonObtenerTodos
             // 
-            this.buttonObtenerTodos.Location = new System.Drawing.Point(806, 345);
+            this.buttonObtenerTodos.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonObtenerTodos.Location = new System.Drawing.Point(885, 288);
             this.buttonObtenerTodos.Name = "buttonObtenerTodos";
-            this.buttonObtenerTodos.Size = new System.Drawing.Size(168, 64);
+            this.buttonObtenerTodos.Size = new System.Drawing.Size(120, 57);
             this.buttonObtenerTodos.TabIndex = 19;
-            this.buttonObtenerTodos.Text = "obtener todos";
+            this.buttonObtenerTodos.Text = "BORRAR CAMPOS";
             this.buttonObtenerTodos.UseVisualStyleBackColor = true;
             this.buttonObtenerTodos.Click += new System.EventHandler(this.buttonObtenerTodos_Click);
             // 
             // buttonsiguiente
             // 
-            this.buttonsiguiente.Location = new System.Drawing.Point(806, 456);
+            this.buttonsiguiente.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonsiguiente.Location = new System.Drawing.Point(899, 516);
             this.buttonsiguiente.Name = "buttonsiguiente";
             this.buttonsiguiente.Size = new System.Drawing.Size(152, 66);
             this.buttonsiguiente.TabIndex = 20;
@@ -249,7 +255,8 @@
             // 
             // buttonanterior
             // 
-            this.buttonanterior.Location = new System.Drawing.Point(620, 439);
+            this.buttonanterior.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonanterior.Location = new System.Drawing.Point(745, 515);
             this.buttonanterior.Name = "buttonanterior";
             this.buttonanterior.Size = new System.Drawing.Size(136, 68);
             this.buttonanterior.TabIndex = 21;
@@ -259,6 +266,7 @@
             // 
             // buttonbuscar
             // 
+            this.buttonbuscar.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonbuscar.Location = new System.Drawing.Point(877, 171);
             this.buttonbuscar.Name = "buttonbuscar";
             this.buttonbuscar.Size = new System.Drawing.Size(128, 50);
