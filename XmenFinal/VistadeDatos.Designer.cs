@@ -32,6 +32,7 @@
             this.dataGridViewXmen = new System.Windows.Forms.DataGridView();
             this.buttonRegresarInterfaz = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewXmen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -39,7 +40,7 @@
             // dataGridViewXmen
             // 
             this.dataGridViewXmen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewXmen.Location = new System.Drawing.Point(12, 12);
+            this.dataGridViewXmen.Location = new System.Drawing.Point(12, 39);
             this.dataGridViewXmen.Name = "dataGridViewXmen";
             this.dataGridViewXmen.RowHeadersWidth = 51;
             this.dataGridViewXmen.RowTemplate.Height = 24;
@@ -48,7 +49,7 @@
             // 
             // buttonRegresarInterfaz
             // 
-            this.buttonRegresarInterfaz.Location = new System.Drawing.Point(31, 436);
+            this.buttonRegresarInterfaz.Location = new System.Drawing.Point(31, 463);
             this.buttonRegresarInterfaz.Name = "buttonRegresarInterfaz";
             this.buttonRegresarInterfaz.Size = new System.Drawing.Size(211, 63);
             this.buttonRegresarInterfaz.TabIndex = 1;
@@ -59,12 +60,22 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(932, 427);
+            this.pictureBox1.Location = new System.Drawing.Point(932, 454);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(98, 83);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Rockwell Extra Bold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(7, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(891, 27);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Podria haber quedado mejor el programa pero decidi ser feliz 👍";
             // 
             // VistadeDatos
             // 
@@ -72,7 +83,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1042, 508);
+            this.ClientSize = new System.Drawing.Size(1033, 536);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonRegresarInterfaz);
             this.Controls.Add(this.dataGridViewXmen);
@@ -82,6 +94,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewXmen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -90,5 +103,6 @@
         private System.Windows.Forms.DataGridView dataGridViewXmen;
         private System.Windows.Forms.Button buttonRegresarInterfaz;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
